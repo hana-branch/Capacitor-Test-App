@@ -1,0 +1,6 @@
+{
+	"bundledWebRuntime": false,
+	"webDir": "www",
+	"appId": "com.hanapark.branch",
+	"appName": "photo-gallery"
+}

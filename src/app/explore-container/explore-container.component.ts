@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Plugins } from '@capacitor/core';
+const { BranchDeepLinks } = Plugins;
 
 @Component({
   selector: 'app-explore-container',
@@ -11,5 +13,12 @@ export class ExploreContainerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
+
+  customEventTrack() {
+  	var eventName = 'clicked_on_this'
+		var metaData = { 'custom_dictionary': 123, 'anything': 'everything' }
+		BranchDeepLinks.sendBranchEvent({ eventName, metaData })
+		console.log("Track Event")
+  }
 
 }
