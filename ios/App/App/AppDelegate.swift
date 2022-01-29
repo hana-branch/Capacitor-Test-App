@@ -10,6 +10,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         Branch.getInstance().enableLogging()
+        Branch.getInstance().checkPasteboardOnInstall()
         Branch.getInstance().initSession(launchOptions: launchOptions)
         return true
     }
@@ -61,5 +62,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NotificationCenter.default.post(name: .capacitorStatusBarTapped, object: nil)
         }
     }
-
 }
